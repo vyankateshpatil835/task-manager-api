@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -7,17 +8,20 @@ connectDB();
 
 const authRouter = require("./routes/authRoutes");
 const taskRouter = require("./routes/taskRoutes");
+
 const notFound = require("./middleware/notFound");
 const errorHandler = require("./middleware/errorMiddleware");
 
 const app = express();
+
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "templates")));
 
 app.use("/api/auth", authRouter);
 app.use("/api/tasks", taskRouter);
 
 app.get("/", (req, res) => {
-  res.json({ message: "Task manager API is Running" });
+  res.sendFile(path.join(__dirname, "templates", "index.html"));
 });
 
 app.get("/api/status", (req, res) => {
