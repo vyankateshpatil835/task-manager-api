@@ -15,8 +15,9 @@ app.use(express.json());
 
 app.use("/api/auth", authRouter);
 app.use("/api/tasks", taskRouter);
-app.use(notFound);
+
 app.use(errorHandler);
+app.use(notFound);
 
 app.get("/", (req, res) => {
   res.json({ message: "Task manager API is Running" });
