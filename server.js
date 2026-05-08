@@ -16,10 +16,6 @@ app.use(express.json());
 app.use("/api/auth", authRouter);
 app.use("/api/tasks", taskRouter);
 
-app.use(notFound);
-app.use(errorHandler);
-
-
 app.get("/", (req, res) => {
   res.json({ message: "Task manager API is Running" });
 });
@@ -27,6 +23,9 @@ app.get("/", (req, res) => {
 app.get("/api/status", (req, res) => {
   res.json({ status: "ok", version: "1.0" });
 });
+
+app.use(notFound);
+app.use(errorHandler);
 
 const port = process.env.PORT || 3000;
 
