@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager API</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🚀 Task Manager API <span class="badge">Live</span></h1>
+        <p>A secure REST API for managing tasks with JWT authentication</p>
+      </div>
+
+      <div class="note">
+        <span>⚠️ Note:</span> Protected routes require a Bearer token in the
+        Authorization header. Register first to get your token.
+      </div>
+
+      <div class="section">
+        <h2>🔐 Auth Routes</h2>
+        <div class="route">
+          <span class="method POST">POST</span>
+          <span class="path">/api/auth/register</span>
+          <span class="desc">Register a new user</span>
+        </div>
+        <div class="route">
+          <span class="method POST">POST</span>
+          <span class="path">/api/auth/login</span>
+          <span class="desc">Login and get token</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>📝 Task Routes</h2>
+        <div class="route">
+          <span class="method GET">GET</span>
+          <span class="path"
+            >/api/tasks <span class="lock">🔒 protected</span></span
+          >
+          <span class="desc">Get all your tasks</span>
+        </div>
+        <div class="route">
+          <span class="method POST">POST</span>
+          <span class="path"
+            >/api/tasks <span class="lock">🔒 protected</span></span
+          >
+          <span class="desc">Create a new task</span>
+        </div>
+        <div class="route">
+          <span class="method GET">GET</span>
+          <span class="path"
+            >/api/tasks/:id <span class="lock">🔒 protected</span></span
+          >
+          <span class="desc">Get a single task</span>
+        </div>
+        <div class="route">
+          <span class="method PUT">PUT</span>
+          <span class="path"
+            >/api/tasks/:id <span class="lock">🔒 protected</span></span
+          >
+          <span class="desc">Update a task</span>
+        </div>
+        <div class="route">
+          <span class="method DELETE">DELETE</span>
+          <span class="path"
+            >/api/tasks/:id <span class="lock">🔒 protected</span></span
+          >
+          <span class="desc">Delete a task</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🛠️ Tech Stack</h2>
+        <div class="route">
+          <span class="path"
+            >Node.js · Express.js · MongoDB · Mongoose · JWT · bcryptjs</span
+          >
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>
+          Built by
+          <a href="https://github.com/vyankateshpatil835" target="_blank"
+            >Vyankatesh Patil</a
+          >
+          ·
+          <a
+            href="https://github.com/vyankateshpatil835/task-manager-api"
+            target="_blank"
+            >GitHub Repo</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
